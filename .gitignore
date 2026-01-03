@@ -1,0 +1,6 @@
+poetry.toml
+docs
+.vscode
+__pycache__
+.env
+temp
