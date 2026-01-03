@@ -29,7 +29,7 @@ def initialize_services():
         if not db:
             raise Exception("Failed to connect to database")
         
-        index_service = IndexService(OPENAI_API_KEY)
+        index_service = IndexService(OPENAI_API_KEY, db)
         file_service = PDFService(db, index_service)
         cache_service = CacheService(REDIS_HOST, REDIS_PORT, REDIS_DB)
         agent = InspectorAgent(index_service, cache_service)
